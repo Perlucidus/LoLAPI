@@ -4,7 +4,7 @@ League of Legends API Library
 ## Usage Example
 ```
 import api_manager
-from api.summoner import Summoner
+from summoner import Summoner
 
 api_manager.initialize('YOUR API KEY HERE')
 summoner = Summoner('eun1')
