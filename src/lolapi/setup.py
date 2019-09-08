@@ -1,0 +1,10 @@
+from setuptools import setup, find_packages
+
+setup(name='lolapi',
+      version='1.0',
+      description='League of Legends API',
+      url='https://github.com/Perlucidus/LoLAPI',
+      packages=find_packages(),
+      requires=['requests'],
+      license='MIT'
+      )
