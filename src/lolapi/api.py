@@ -1,4 +1,4 @@
-import api_manager
+from lolapi import api_manager
 import requests
 import json
 from typing import Dict
