@@ -3,12 +3,14 @@ League of Legends API Library
 
 ## Usage Example
 ```
-import apiconfig
+import api_manager
 from api.summoner import Summoner
 
-apiconfig.initialize('YOUR API KEY HERE')
+api_manager.initialize('YOUR API KEY HERE')
 summoner = Summoner('eun1')
-print(summoner.by_name('October'))
+october = summoner.by_name('October')
+print(october['summonerLevel'])
+print(api_manager.api_request_rate(120))
 ```
 
 ## [License](LICENSE)

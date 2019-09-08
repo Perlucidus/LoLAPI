@@ -1,4 +1,4 @@
-from api.api import *
+from api import *
 
 
 class Status(API):

@@ -1,4 +1,4 @@
-import apiconfig
+import api_manager
 import requests
 import json
 from typing import Dict
@@ -26,6 +26,9 @@ class API(object):
         url = f'{self._url}/{sub_api}'
         if method:
             url += f'/{method}'
-        result = requests.get(url, params, headers={'X-Riot-Token': apiconfig.api_key})
-        result.raise_for_status()
+        result = requests.get(url, params, headers={'X-Riot-Token': api_manager.api_key})
+        # noinspection PyProtectedMember
+        api_manager._api_request()
+        if api_manager.raise_for_status:
+            result.raise_for_status()
         return json.loads(result.text)
