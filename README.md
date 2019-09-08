@@ -1,6 +1,8 @@
 # LoLAPI
 League of Legends API Library
 
+Full API Reference: https://developer.riotgames.com/apis
+
 ## Usage Example
 ```
 import api_manager
