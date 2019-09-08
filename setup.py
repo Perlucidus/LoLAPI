@@ -6,6 +6,6 @@ setup(name='lolapi',
       url='https://github.com/Perlucidus/LoLAPI',
       packages=find_packages('src'),
       package_dir={'': 'src'},
-      requires=['requests'],
+      install_requires=['requests'],
       license='MIT'
       )
