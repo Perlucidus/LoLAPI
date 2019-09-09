@@ -22,7 +22,7 @@ class API(object):
     def url(self) -> str:
         return self._url
 
-    def get(self, sub_api: str, method: str = None, params: Dict[str, str] = None) -> str:
+    def get(self, sub_api: str, method: str = None, params: Dict[str, str] = None):
         url = f'{self._url}/{sub_api}'
         if method:
             url += f'/{method}'

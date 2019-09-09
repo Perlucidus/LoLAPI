@@ -5,5 +5,5 @@ class Champion(API):
     def __init__(self, region: str):
         super().__init__(region, 3, 'platform')
 
-    def rotations(self) -> str:
+    def rotations(self):
         return self.get('champion-rotations')
