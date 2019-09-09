@@ -1,7 +1,6 @@
 from lolapi import api_manager
 import requests
 import json
-from typing import Dict
 
 
 class API(object):
@@ -22,11 +21,12 @@ class API(object):
     def url(self) -> str:
         return self._url
 
-    def get(self, sub_api: str, method: str = None, params: Dict[str, str] = None):
+    def get(self, sub_api: str, method: str = None, **kwargs):
         url = f'{self._url}/{sub_api}'
         if method:
             url += f'/{method}'
-        result = requests.get(url, params, headers={'X-Riot-Token': api_manager.api_key})
+        result = requests.get(url, {k: json.dumps(v) for k, v in kwargs.items()},
+                              headers={'X-Riot-Token': api_manager.api_key})
         # noinspection PyProtectedMember
         api_manager._api_request()
         if api_manager.raise_for_status:
