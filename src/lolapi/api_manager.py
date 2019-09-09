@@ -8,7 +8,7 @@ _api_requests = []
 def initialize(key: str, ignore_exceptions: bool = True) -> None:
     global api_key, raise_for_status
     api_key = key
-    raise_for_status = ignore_exceptions
+    raise_for_status = not ignore_exceptions
 
 
 def api_request_rate(seconds: int):
